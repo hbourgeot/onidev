@@ -1,7 +1,7 @@
 from sqlalchemy import Table, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from database import Base
 
 followers_table = Table(
   'followers', Base.metadata, Column('follower_id', Integer, ForeignKey('devs.id'), primary_key=True), Column('followed_id', Integer, ForeignKey('devs.id'), primary_key=True)
